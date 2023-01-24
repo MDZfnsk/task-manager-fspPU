@@ -1,0 +1,27 @@
+<div class="centered-container">
+    <h1>Upcoming Days</h1>
+
+
+    <div class="list-item" *ngFor="let date of next7Days; index as i">
+        <ng-container>
+            <h2>{{ date | date:'yyyy MMMM dd'}}</h2>
+            <app-no-of-lists [showDate]="date">
+
+            </app-no-of-lists>
+            
+
+            <div class="select-date">
+                <a routerLink="/lists" [queryParams]="{ date: date.toString() }">
+                    <button>Show</button>
+                </a>
+                <a routerLink="/add-list" [queryParams]="{ date: date.toString() }">
+                    <button>Add List</button>
+                </a>
+            </div>   
+            <button (click)="onButtonClick()">Show</button>        
+        </ng-container>
+    </div>
+
+
+
+</div>
