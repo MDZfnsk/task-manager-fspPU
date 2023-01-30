@@ -28,11 +28,11 @@ export class AddListComponent implements OnInit {
 
   onAddListClick(){
    
-    console.log(this.newListName);
+    
     this.listService.addList(this.newListName,this.date).subscribe((item:Lists[])=>{
       alert("Successfuly Added to the Database !!!");
       this.updatedList = item;
-      console.log(this.updatedList);
+      
       this.router.navigateByUrl('/');     
 
     })

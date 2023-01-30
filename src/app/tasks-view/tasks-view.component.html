@@ -1,21 +1,62 @@
 <h1> Tasks </h1>
-<button (click)="onClick()"> < Back</button>
+<button (click)="onClick()" class="back-btn">
+    < Back</button>
 
-<div class="task-container">
-    <div class="task-menu" *ngFor="let task of tasks">
-        <p> {{task.name}} </p>
-        <a>
-            <svg class="done" fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" id="d9090658-f907-4d85-8bc1-743b70378e93" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg"><title>prime</title><path id="70fa6808-131f-4233-9c3a-fc089fd0c1c4" data-name="done circle" d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0ZM11.52,17L6,12.79l1.83-2.37L11.14,13l4.51-5.08,2.24,2Z"/></svg>
-            
-        </a>
-        <a (click)="onClickDelete(task._id)">
-            <svg  width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="delete" d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg> 
-        </a>
+    <ng-container *ngIf="!isTasks">
         
-    </div>
-    
-</div>
+        <p class="no-msg">There are <span> NO </span> Tasks under this List yet !!!</p>
+        <button class="add-btn" (click)="onAddClick()">+ Add new</button>
 
+    </ng-container>
 
+        
+
+        <ng-container *ngIf="isTasks">
+            <div class="task-container">
+                <div class="task-menu" *ngFor="let task of tasks" [ngClass]="{'done': task.isCompleted}">
+                    <p> {{task.name}} </p>
+                    <a (click)="onMarkClick(task._id,task.isCompleted)">
+                        <svg fill="#4FB431" width="25px" height="25px" viewBox="0 0 24 24"
+                            id="d9090658-f907-4d85-8bc1-743b70378e93" data-name="Livello 1"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title *ngIf="!task.isCompleted">Mark as Completed</title>
+                            <title *ngIf="task.isCompleted">Mark as Uncompleted</title>
+                            <path id="70fa6808-131f-4233-9c3a-fc089fd0c1c4" data-name="done circle"
+                                d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0ZM11.52,17L6,12.79l1.83-2.37L11.14,13l4.51-5.08,2.24,2Z"
+                                [ngClass]="{'done': task.isCompleted}" />
+                        </svg>
+
+                    </a>
+
+                    <a [routerLink]="['/editTasks',task._id]" *ngIf="!task.isCompleted">
+                        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>Edit</title>
+                            <path d="M11 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15V13" stroke="#FFFFFF"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M16.04 3.02001L8.16 10.9C7.86 11.2 7.56 11.79 7.5 12.22L7.07 15.23C6.91 16.32 7.68 17.08 8.77 16.93L11.78 16.5C12.2 16.44 12.79 16.14 13.1 15.84L20.98 7.96001C22.34 6.60001 22.98 5.02001 20.98 3.02001C18.98 1.02001 17.4 1.66001 16.04 3.02001Z"
+                                stroke="#FFFFFF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M14.91 4.1499C15.58 6.5399 17.45 8.4099 19.85 9.0899" stroke="#FFFFFF"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                    </a>
+                    <a (click)="onClickDelete(task._id)">
+                        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>Delete</title>
+                            <path class="delete"
+                                d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16"
+                                stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+
+                </div>
+                <button class="add-btn" (click)="onAddClick()">+ Add new</button>
+
+            </div>
+
+        </ng-container>

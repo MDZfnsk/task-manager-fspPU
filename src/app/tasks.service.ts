@@ -20,13 +20,27 @@ export class TasksService {
 		return this.http.get<Tasks[]>(`/api/tasks/${_listId}`);
 	}
 
-  removeTask(_Id: string){
-    return this.http.delete(`api/TaskRemove/${_Id}`);
+  removeTask(_Id: string): Observable<Tasks[]>{
+    return this.http.delete<Tasks[]>(`api/TaskRemove/${_Id}`);
   }
 
-  
+  //Edit the task name
+  editTask(Id: string,name: string): Observable<Tasks[]> {
+    
+    return this.http.patch<Tasks[]>(`api/editTasks/${Id}`,{name});
+  }
 
+  //Edit the Task's Completeion Status
+  markTaskComplete(Id: string,status:boolean): Observable<Tasks[]> {  
+    
+    return this.http.patch<Tasks[]>(`api/taskComplete/${Id}`,{status: !status});
+  }
 
+  //set a task under selected list
+  addTask(name: string, _listId : string):Observable<Tasks[]>{
+    const newTask = {name,_listId,isCompleted: false};
+    return this.http.post<Tasks[]>(`/api/addTask`,{...newTask});
+  }
 
   
 

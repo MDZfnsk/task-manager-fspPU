@@ -10,6 +10,7 @@ import { Lists } from '../types';
 export class ShowListsComponent implements OnInit {
 
   lists: Lists[] = [];
+  isLists: boolean = true;
 
   constructor(private listService: ListsService) {
 
@@ -20,6 +21,13 @@ export class ShowListsComponent implements OnInit {
     
     this.listService.getAllLists().subscribe((lists: Lists[]) =>{
       this.lists = lists;
+      if(lists.length === 0){
+        this.isLists = false;
+      }
+      else {
+        this.isLists = true;
+      }
+
       
     });
 

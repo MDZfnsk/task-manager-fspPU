@@ -19,6 +19,9 @@
 
 a {
     text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .list-container {
@@ -28,6 +31,9 @@ a {
     margin-top: 5px;     
    
    
+}
+span {
+    color: red;
 }
 
 

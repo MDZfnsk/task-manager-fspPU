@@ -19,13 +19,19 @@
 
 a {
     text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+
+
 
 .list-container {
     
     margin: auto;
     width: 100%; 
-    margin-top: 5px;     
+    margin-top: 5px;
+       
    
    
 }
@@ -42,4 +48,8 @@ p {
 
 .select {
     stroke: #159615 ;
+}
+
+.no-msg {
+    text-align: center;
 }

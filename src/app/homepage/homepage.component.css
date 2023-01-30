@@ -17,6 +17,7 @@ h1 {
     text-align: center;
     
     
+    
 }
 
 h2 {
@@ -78,6 +79,7 @@ a {
   
 
 .list-container-main {
+    
 	 
     margin: auto;  
 	
@@ -102,9 +104,7 @@ a {
     width: 60%;
 }
 
-.list-hd {
-    margin-left: 100px;
-}
+
 
 .list-item {
     border-bottom: 2px solid black;

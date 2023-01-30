@@ -1,0 +1,22 @@
+
+<h1>Edit Task </h1>
+<button (click)="onClick()" class="back-btn"> < Back</button>
+
+<div class="center-container">
+	
+	<div class="input-container">
+		<input type="text" class="text-box" placeholder="New Task Name" [(ngModel)]=" newTaskName">
+	</div>
+    <!-- [(ngModel)]=" newTaskName" -->
+	
+	  
+
+	  <div class="button-container">
+		<button class="button button-1" (click)="onClick()">  Cancel </button>
+		<button class="button button-2" (click)="onEditClick()"> Add </button>
+	  </div>
+	
+  </div>
+
+  <!-- (click)="onAddListClick()" -->
+  

@@ -43,8 +43,8 @@ export class ListsService {
    * 
    * Send the ID in the body ****************** 
   */
-  removeList(_id:string):Observable<Lists[]>{    
-    return this.http.delete<Lists[]>(`/api/listRemove/${_id}`);
+  removeList(id:string):Observable<Lists[]>{    
+    return this.http.delete<Lists[]>(`/api/listRemove/${id}`);
   }
 
 

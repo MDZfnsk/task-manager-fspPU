@@ -16,6 +16,8 @@ import { NoOfListsComponent } from './no-of-lists/no-of-lists.component';
 import { DeleteListComponent } from './delete-list/delete-list.component';
 import { ShowListsComponent } from './show-lists/show-lists.component';
 import { TasksViewComponent } from './tasks-view/tasks-view.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 
 
@@ -30,6 +32,8 @@ import { TasksViewComponent } from './tasks-view/tasks-view.component';
     DeleteListComponent,
     ShowListsComponent,
     TasksViewComponent,
+    EditTaskComponent,
+    AddTaskComponent,
     
   ],
   imports: [

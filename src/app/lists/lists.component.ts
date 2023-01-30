@@ -15,6 +15,7 @@ export class ListsComponent implements OnInit {
   lists: Lists[] = [];
 
   date: Date = new Date();  
+  isLists: boolean = true;
 
   constructor(
     private route: ActivatedRoute, 
@@ -46,6 +47,12 @@ export class ListsComponent implements OnInit {
        * assign the recieved lists to the this.lists property
        */
       this.lists = lists ;
+      if(lists.length === 0){
+        this.isLists = false;
+      }
+      else {
+        this.isLists = true;
+      }
       
     })
 

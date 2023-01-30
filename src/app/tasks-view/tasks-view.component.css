@@ -1,18 +1,18 @@
 .task-menu {
-    background-color: #71C49D ;
-	border: none;
-	border-radius: 8px;
-	color: white;
-	cursor: pointer;
-	font-size: 5px;	
-	outline: none;	   
+    background-color: #71C49D;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 5px;
+    outline: none;
     width: 70%;
     margin: auto;
-    margin-bottom: 10px;  
+    margin-bottom: 10px;
     padding: 0 5px !important;
-    
-  
-    
+
+
+
     display: flex;
     align-items: center;
 
@@ -25,60 +25,63 @@ a {
     margin-right: 10px;
 }
 
-.task-container {   
-    
+.task-container {
+
     margin: auto;
-    width: 100%; 
-    margin-top: 25px;    
-    position: relative; 
-   
-   
+    width: 100%;
+    margin-top: 25px;
+    position: relative;
+
+
 }
 
 
 p {
-    
+
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     padding: 0 10px;
     color: black;
-    
+
     flex: 1;
     margin-right: 10px;
 }
 
-button {
-    background-color: #424442;	
-	border: none;
-	border-radius: 8px;
-	color: white;
-	cursor: pointer;
-	font-size: 16px;
-	font-weight: bold;
-	outline: none;
-	padding: 5px;
+.back-btn {
+    background-color: #424442;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    padding: 5px;
     margin-left: 15px;
     margin-top: 10px;
     width: 10%;
-    
+
     height: 35px;
     position: absolute;
     top: 0;
     left: 0;
-   
-    
+
+
 }
 
 
 
 .done {
-    fill: green;
+    fill: #000000;
+    background-color: #726f6f;
 }
 
-.delete{
-    stroke: red;
-    
+.done>p {
+    color: #D5D5D5;
+    text-decoration: line-through;
 }
+
+
 
 svg {
     padding: 0;
@@ -87,7 +90,38 @@ svg {
 
 h1 {
     text-align: center;
-    border-bottom: 2px solid #ddd;	
+    border-bottom: 2px solid #ddd;
     margin-bottom: 10px;
     font-family: 'Nunito Sans', sans-serif;
-  }
+}
+
+.add-btn {
+    display: block;
+    margin: 0 auto;
+
+    background-color: #58F9AF;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+
+    padding: 5px;
+
+    width: 10%;
+
+    height: 35px;
+
+}
+
+.no-msg {
+    color: #086613;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
+}
+
+span {
+    color: red;
+}
