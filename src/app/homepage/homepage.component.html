@@ -1,27 +1,44 @@
-<div class="centered-container">
-    <h1>Upcoming Days</h1>
+<div class="page-container">
+    <div class="column-one">
+        <div class="centered-container">
+            <h1>Upcoming Days</h1>
+        
+        
+            <div class="list-item" *ngFor="let date of next7Days; index as i">
+                <ng-container>
+                    <h2>{{ date | date:'yyyy MMMM dd'}}</h2>
+                    
+                    <app-no-of-lists [showDate]="date" class="no-list-component">
+        
+                    </app-no-of-lists>                 
+        
+                    <div class="select-date">
+                        <a routerLink="/lists" [queryParams]="{ date: date.toString() }">
+                            <button class="show">Show</button>
+                        </a>
+                        <a routerLink="/add-list" [queryParams]="{ date: date.toString() }">
+                            <button class="add">+ Add List</button>
+                        </a>
+                    </div>   
+                    <!-- <button (click)="onButtonClick()">Show</button>         -->
+                </ng-container>
 
+                
+            </div>
+        
+        
+        
+        </div>
 
-    <div class="list-item" *ngFor="let date of next7Days; index as i">
-        <ng-container>
-            <h2>{{ date | date:'yyyy MMMM dd'}}</h2>
-            <app-no-of-lists [showDate]="date">
-
-            </app-no-of-lists>
-            
-
-            <div class="select-date">
-                <a routerLink="/lists" [queryParams]="{ date: date.toString() }">
-                    <button>Show</button>
-                </a>
-                <a routerLink="/add-list" [queryParams]="{ date: date.toString() }">
-                    <button>Add List</button>
-                </a>
-            </div>   
-            <button (click)="onButtonClick()">Show</button>        
-        </ng-container>
     </div>
+    <div class="column-two">
+        <div class="list-container-main">
+            <h1 class="list-hd">Lists</h1>
+            <app-show-lists></app-show-lists>
+        </div>
 
-
-
+    </div>
 </div>
+
+
+

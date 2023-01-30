@@ -1,0 +1,127 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    display: block;
+	border-bottom: 2px solid #ddd;	
+	padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    
+    
+}
+
+h2 {
+    color: #086613;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.4) ;
+    text-align: center;
+    border-radius: 10px;
+    height: 35px;
+}
+
+.no-list-component {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+	
+    
+}
+
+.select-date {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+    
+    
+}
+  
+button {
+	
+	border: none;
+	border-radius: 8px;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	outline: none;
+	padding: 5px;
+    margin-left: 15px;
+    width: 30%;
+    margin-bottom: 10px;
+    height: 35px;
+}
+
+button.show {
+    background-color: #28a228;
+
+}
+
+button.add {
+    background-color: #58F9AF;
+
+}
+  
+
+a {
+	text-decoration: none;
+}
+  
+
+.list-container-main {
+	 
+    margin: auto;  
+	
+}
+  
+
+  
+.page-container {
+	  display: flex;
+      
+}
+  
+.column {
+	  flex: 1;
+}
+
+.column-one {
+    width: 40%;
+}
+
+.column-two {
+    width: 60%;
+}
+
+.list-hd {
+    margin-left: 100px;
+}
+
+.list-item {
+    border-bottom: 2px solid black;
+}
+
+
+
+  
+
+.list-item {
+	
+	display: block;
+	
+}
+
+
+  
+
+  
+

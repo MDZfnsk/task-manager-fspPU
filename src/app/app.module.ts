@@ -11,9 +11,12 @@ import { ListsComponent } from './lists/lists.component';
 import { AddListComponent } from './add-list/add-list.component';
 
 
-import { DatePipe } from '@angular/common';
+
 import { NoOfListsComponent } from './no-of-lists/no-of-lists.component';
 import { DeleteListComponent } from './delete-list/delete-list.component';
+import { ShowListsComponent } from './show-lists/show-lists.component';
+import { TasksViewComponent } from './tasks-view/tasks-view.component';
+
 
 
 
@@ -24,7 +27,10 @@ import { DeleteListComponent } from './delete-list/delete-list.component';
     ListsComponent,
     AddListComponent,
     NoOfListsComponent,
-    DeleteListComponent
+    DeleteListComponent,
+    ShowListsComponent,
+    TasksViewComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,7 @@ import { DeleteListComponent } from './delete-list/delete-list.component';
     FormsModule
   ],
   providers: [
-    DatePipe
+   
   ],
   bootstrap: [AppComponent]
 })

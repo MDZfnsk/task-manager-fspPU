@@ -1,17 +1,19 @@
-<a routerLink="/">
-    <button> Back</button>
-</a>
 
-<p>add-list works!</p>
+<h1>Add New List </h1>
+<button routerLink="/" class="back-btn"> < Back</button>
 
-<div class="page">
+<div class="center-container">
 	
-	<div class="centered-container">
-        
-		<h1>Add New Task List</h1>
-		<input type="text" placeholder="Enter list name" [(ngModel)]=" newListName" />
-		<button (click)="onAddListClick()"> Add List</button>	
-     
-
+	<div class="input-container">
+		<input type="text" class="text-box" placeholder="Enter list name" [(ngModel)]=" newListName">
 	</div>
-</div>
+	
+	  
+
+	  <div class="button-container">
+		<button class="button button-1" routerLink="/">  Cancel </button>
+		<button class="button button-2" (click)="onAddListClick()"> Add </button>
+	  </div>
+	
+  </div>
+  

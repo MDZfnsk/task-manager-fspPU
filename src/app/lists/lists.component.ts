@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DatePipe } from '@angular/common';
 import { ListsService } from '../lists.service';
 import { Lists } from '../types';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lists',
@@ -13,13 +14,13 @@ export class ListsComponent implements OnInit {
 
   lists: Lists[] = [];
 
-  date: Date = new Date();
+  date: Date = new Date();  
 
-  
-
-  
-
-  constructor(private route: ActivatedRoute, private datePipe: DatePipe, private listService: ListsService) {
+  constructor(
+    private route: ActivatedRoute, 
+    private listService: ListsService, 
+    private location:Location,
+    private router: Router) {
 
   }
 
@@ -39,11 +40,23 @@ export class ListsComponent implements OnInit {
       //we make a new array by mapping only the name properties of the recieved object
       // this.lists = lists.map(item => item.name);
 
+
+      /**
+       * As we need to make these recived lists items to work as Inputs to another component, we directly
+       * assign the recieved lists to the this.lists property
+       */
       this.lists = lists ;
       
     })
 
    
+  }
+
+  onClick() {
+    
+    // this.router.navigate([-1]);
+    this.location.back();
+
   }
 
 

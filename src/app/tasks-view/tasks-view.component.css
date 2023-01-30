@@ -1,17 +1,18 @@
-.list-menu {
+.task-menu {
     background-color: #71C49D ;
 	border: none;
 	border-radius: 8px;
 	color: white;
 	cursor: pointer;
-	font-size: 25px;	
-	outline: none;
-    padding: 1px 15px 1px 15px;
-	
+	font-size: 5px;	
+	outline: none;	   
     width: 70%;
     margin: auto;
-    margin-bottom: 10px;
-
+    margin-bottom: 10px;  
+    padding: 0 5px !important;
+    
+  
+    
     display: flex;
     align-items: center;
 
@@ -19,13 +20,17 @@
 
 a {
     text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.list-container {
+.task-container {   
     
     margin: auto;
     width: 100%; 
-    margin-top: 5px;     
+    margin-top: 25px;    
+    position: relative; 
    
    
 }
@@ -35,16 +40,12 @@ p {
     
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
-    color: black;   
     padding: 0 10px;
+    color: black;
+    
     flex: 1;
+    margin-right: 10px;
 }
-
-.select {
-    stroke: #159615 ;
-}
-
-
 
 button {
     background-color: #424442;	
@@ -68,15 +69,25 @@ button {
     
 }
 
+
+
+.done {
+    fill: green;
+}
+
+.delete{
+    stroke: red;
+    
+}
+
+svg {
+    padding: 0;
+}
+
+
 h1 {
     text-align: center;
     border-bottom: 2px solid #ddd;	
     margin-bottom: 10px;
     font-family: 'Nunito Sans', sans-serif;
-  }
-
-  .day-topic {
-    color: #086613;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 25px;   
   }

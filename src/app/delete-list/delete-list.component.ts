@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import { Lists } from '../types';
 import { ListsService } from '../lists.service';
 
@@ -7,18 +7,26 @@ import { ListsService } from '../lists.service';
   templateUrl: './delete-list.component.html',
   styleUrls: ['./delete-list.component.css']
 })
-export class DeleteListComponent {
+export class DeleteListComponent implements OnInit {
 
   @Input()
   selectedList!: Lists;
 
+ 
+
   constructor(private listService: ListsService) {}
+
+  ngOnInit(){
+  
+
+  }
 
 
   onClickDelete() {
+    console.log(this.selectedList._id);
 
     this.listService.removeList(this.selectedList._id).subscribe(()  => {
-      alert("Successfuly Added to the Database !!!");
+      alert("Successfuly Deleted from Database !!!");
       location.reload();
     })
 
