@@ -1,5 +1,5 @@
 
-import { removeTask } from "../db";
+import { getAllTasks, removeTask } from "../db";
 
 export const removeTaskRoute = {
     method:'delete',
@@ -9,7 +9,11 @@ export const removeTaskRoute = {
         const {id} = req.params;
         console.log(id);
         await removeTask(id); 
-        res.sendStatus(200);       
+
+
+        const updatedTaskItems = await getAllTasks();
+        res.status(200).json(updatedTaskItems);
+            
 
     }
 
