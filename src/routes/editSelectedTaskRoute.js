@@ -13,8 +13,7 @@ export const editSelectedTaskRoute = {
         
         const tasks = await getAllTasks();
         res.status(200).json(tasks);
-
-        //Tried to implement to send back the updated task back to the server
+       
        
       
     }

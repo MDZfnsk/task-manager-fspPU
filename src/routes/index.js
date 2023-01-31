@@ -9,6 +9,11 @@ import { removeTaskRoute } from "./removeTaskRoute";
 import { editSelectedTaskRoute } from "./editSelectedTaskRoute";
 import { addTaskRoute } from './addTaskRoute';
 import { markCompletedTaskRoute } from "./markCompletedTaskRoute";
+import { userAuthRoute } from "./userAuthRoute";
+import { getAllUsersRoute } from "./getAllUsersRoute";
+import { addUserRoute } from "./addUserRoute";
+import { getOneUserRoute } from "./getOneUserRoute";
+import { getSelectedListsByUser } from "./getSelectedListsByUser";
 
 export const routes = [
     getSelectedListsRoute,
@@ -20,5 +25,10 @@ export const routes = [
     removeTaskRoute,
     editSelectedTaskRoute,
     addTaskRoute,
-    markCompletedTaskRoute
+    markCompletedTaskRoute,
+    userAuthRoute,
+    getAllUsersRoute,
+    addUserRoute,
+    getOneUserRoute,
+    getSelectedListsByUser
 ];
