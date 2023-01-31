@@ -1,0 +1,108 @@
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0;
+
+}
+
+form {
+   
+    width: 80%;
+}
+
+
+.input-container {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    
+
+}
+
+.text-box {
+    margin-bottom: 10px;
+    width: 60%;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    
+}
+
+.button-container {
+
+
+    display: flex;
+    bottom: 0;
+    padding-top: 20px;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+   
+
+    margin: 0 auto;
+
+
+}
+
+.signUp-container {
+    
+    text-align: center;
+
+}
+
+button {
+
+    height: 50px;
+    width: 80%;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #28a228;
+
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+
+
+}
+
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 45px;
+    color: white;
+    margin-bottom: 2px solid black;
+}
+
+img {
+    margin-top: 30px;
+    height: 200px;
+    width: 200px;
+}
+p {
+    font-size: 30px;
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+}
+
+a {
+    color: turquoise;
+}

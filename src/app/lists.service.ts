@@ -12,37 +12,37 @@ export class ListsService {
   constructor( private http: HttpClient) { }
 
 
-  //get all the lists
-  getAllLists(): Observable<Lists[]> {
+  
+
+
+  //get lists by ID
+  getAllListsById(userId: string): Observable<Lists[]> {
     
-		return this.http.get<Lists[]>(`/api/lists`);
+		return this.http.get<Lists[]>(`/api/Ulists/${userId}`);
 	}
-
-
-
 
   //get lists from a selected date
-  getLists(date: string): Observable<Lists[]> {
-		return this.http.get<Lists[]>(`/api/lists/${date}`);
+  getListsByIdnDate(date: string,id: string): Observable<Lists[]> {
+    
+		return this.http.get<Lists[]>(`/api/lists/${date}/${id}`);   
+
 	}
 
-  //get no of lists for a selected date
-  getNoOfLists(date:string): Observable<string> {
-    return this.http.get<string>(`/api/listsNo/${date}`)
+  //Get no of lists
+
+  getNoOfLists(date:string,userId: string): Observable<string> {
+    return this.http.get<string>(`/api/listsNo/${date}/${userId}`)
   }
 
-  //set a list for a selected date
-  addList(name: string, setDate: string):Observable<Lists[]>{
-    const newList = {name,setDate};
+   //set a list for a selected date
+   addList(name: string, setDate: string, userId: string):Observable<Lists[]>{
+    const newList = {name,setDate,userId};
+    console.log(newList);
     return this.http.post<Lists[]>(`/api/lists`,{...newList});
   }
-
-
-
-  /** 
-   * 
-   * Send the ID in the body ****************** 
-  */
+  
+  
+//Remove list by Id
   removeList(id:string):Observable<Lists[]>{    
     return this.http.delete<Lists[]>(`/api/listRemove/${id}`);
   }

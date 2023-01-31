@@ -16,6 +16,7 @@ export class ListsComponent implements OnInit {
 
   date: Date = new Date();  
   isLists: boolean = true;
+  userId: string = '';
 
   constructor(
     private route: ActivatedRoute, 
@@ -31,21 +32,42 @@ export class ListsComponent implements OnInit {
     //Accessing the dates passed into the component as queryParams and assigning it to a local variable.
     this.route.queryParams.subscribe(params => {
       this.date = new Date(params['date']);
+      this.userId = params['userId'];
+     
 
     });
 
-    //Calling the getLists() function and passing the date as a parameter to the function
-    this.listService.getLists(this.date.toString()).subscribe(lists => {
-
-      //as the response sends and array of objects and we only need to display the list name
-      //we make a new array by mapping only the name properties of the recieved object
-      // this.lists = lists.map(item => item.name);
 
 
-      /**
-       * As we need to make these recived lists items to work as Inputs to another component, we directly
-       * assign the recieved lists to the this.lists property
-       */
+
+
+
+    // //Calling the getLists() function and passing the date as a parameter to the function
+    // this.listService.getLists(this.date.toString()).subscribe(lists => {
+
+    //   //as the response sends and array of objects and we only need to display the list name
+    //   //we make a new array by mapping only the name properties of the recieved object
+    //   // this.lists = lists.map(item => item.name);
+
+
+    //   /**
+    //    * As we need to make these recived lists items to work as Inputs to another component, we directly
+    //    * assign the recieved lists to the this.lists property
+    //    */
+    //   this.lists = lists ;
+    //   if(lists.length === 0){
+    //     this.isLists = false;
+    //   }
+    //   else {
+    //     this.isLists = true;
+    //   }
+      
+    // })
+
+ 
+
+    
+     this.listService.getListsByIdnDate(this.date.toString(),this.userId).subscribe(lists => {      
       this.lists = lists ;
       if(lists.length === 0){
         this.isLists = false;
@@ -56,12 +78,17 @@ export class ListsComponent implements OnInit {
       
     })
 
+
+
+
+    
+
    
   }
 
   onClick() {
     
-    // this.router.navigate([-1]);
+    
     this.location.back();
 
   }

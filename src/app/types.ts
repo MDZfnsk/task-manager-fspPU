@@ -1,7 +1,8 @@
 export interface Lists {
 	_id: string,
 	name: string,
-	setDate: Date
+	setDate: Date,
+	userId: string
 }
 
 
@@ -11,4 +12,12 @@ export interface Tasks {
 	name: string,
 	isCompleted: boolean
 	
+}
+
+export interface Users {
+	_id: string,
+	email: string,
+	name: string,
+	userName: string,
+	password: string
 }

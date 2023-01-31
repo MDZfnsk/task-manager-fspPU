@@ -70,7 +70,6 @@ export class TasksViewComponent implements OnInit {
   //Marking the Task as Completed
   onMarkClick(id: string,status:boolean){
     this.tasksService.markTaskComplete(id,status).subscribe((tasks: Tasks[])=> {
-      console.log("Wade Hari");
       window.location.reload();
 
     })

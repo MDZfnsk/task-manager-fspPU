@@ -1,4 +1,6 @@
 import { Component,OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-homepage',
@@ -13,6 +15,14 @@ export class HomepageComponent implements OnInit {
 		return date;
 	});
 
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService
+    ) {}
+
+  userId: string ='';
+  userNAME: string = '';
+
   
 
   onButtonClick(){
@@ -25,10 +35,32 @@ export class HomepageComponent implements OnInit {
   
 
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      
+      this.userId = params['userId'];
+      
+      this.userService.getOneUser(this.userId).subscribe((name)=> {
+       
+        this.userNAME = name;
+
+      })
+      
+    })
 
    
     
   }
+
+
+
+
+
+
+
+
+
+
+
 
 }

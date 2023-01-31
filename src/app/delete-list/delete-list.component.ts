@@ -37,18 +37,12 @@ export class DeleteListComponent implements OnInit {
   }
 
 
-  // onClickDelete() {
-    
+  onBackClick(){
+    this.location.back();
+  }
 
-  //   this.listService.removeList(this.selectedList._id).subscribe(()  => {
-  //     alert("Successfuly Deleted from Database !!!");
-  //     location.reload();
-  //   })
 
-    
-    
-
-  // }
+  
 
  
 

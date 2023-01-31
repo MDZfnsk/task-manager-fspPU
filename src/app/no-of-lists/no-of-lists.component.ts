@@ -8,20 +8,29 @@ import { ListsService } from '../lists.service';
 })
 export class NoOfListsComponent implements OnInit{
 
-  @Input() showDate: Date | undefined; 
+  @Input() 
+  showDate?: Date; 
+  
+  @Input() 
+  userId?: string
 
   number: string = '';
 
 
-  constructor(private listService: ListsService) {}
+  constructor(private listService: ListsService) {
+    
+  }
+  
 
   ngOnInit () {
 
-    if(this.showDate){
-      this.listService.getNoOfLists(this.showDate.toString()).subscribe(item => {
+    if(this.showDate && this.userId){
+      this.listService.getNoOfLists(this.showDate.toString(),this.userId).subscribe(item => {
         this.number = item;
       })
     }
+
+    
 
     
 

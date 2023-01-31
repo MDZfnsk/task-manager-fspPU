@@ -3,6 +3,7 @@ import { ListsService  } from '../lists.service';
 import { Lists } from '../types';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-list',
@@ -14,13 +15,20 @@ export class AddListComponent implements OnInit {
   date: string = '';
   newListName: string = '';
   updatedList: Lists[] = [];
+  userId: string = '';
 
-  constructor(private listService: ListsService, private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private listService: ListsService,
+    private router: Router, 
+    private route: ActivatedRoute,
+    private location: Location) {}
 
 
   ngOnInit() {
       this.route.queryParams.subscribe(params => {
       this.date = new Date(params['date']).toString();
+      this.userId = params['userId'];
+      console.log(this.userId);
 
     });
 
@@ -29,14 +37,18 @@ export class AddListComponent implements OnInit {
   onAddListClick(){
    
     
-    this.listService.addList(this.newListName,this.date).subscribe((item:Lists[])=>{
+    this.listService.addList(this.newListName,this.date,this.userId).subscribe((item:Lists[])=>{
       alert("Successfuly Added to the Database !!!");
       this.updatedList = item;
-      
-      this.router.navigateByUrl('/');     
+
+      this.location.back()    
 
     })
 
+  }
+
+  onBackClick(){
+    this.location.back()
   }
 
   

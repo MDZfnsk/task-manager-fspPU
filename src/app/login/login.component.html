@@ -1,0 +1,22 @@
+<div class="center-container">
+    <h1> Sign In </h1>
+    <img src="assets/toDo.png">
+
+    <form (ngSubmit)="onSubmitForm(form.value)" [formGroup]="form">
+
+    <div class="input-container">
+        <div [innerHTML]="message_1"></div>        
+        <input type="text" class="text-box" placeholder="Username" formControlName="userName">
+
+        <div [innerHTML]="message_2"></div> 
+        <input type="password" class="text-box" placeholder="Password" formControlName="password">
+    </div>
+    <div class="button-container">        
+        <button type="submit"> Login </button>
+    </div>
+    <div class="signUp-container">
+        <p> Don't have an Account ? <a routerLink="/sign-up"> Sign Up</a> here.</p>
+    </div>
+</form>
+
+</div>   

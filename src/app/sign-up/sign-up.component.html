@@ -1,0 +1,38 @@
+<h1> Sign Up </h1>
+<button class="back-btn" routerLink="/">
+    < Back</button>
+
+
+    <div class="center-container">
+       
+    
+        <form (ngSubmit)="onSubmitForm(form.value)" [formGroup]="form">
+           
+        <div class="input-container">
+
+            <label>Name</label>                    
+            <input type="text" class="text-box" placeholder="Name" formControlName="name">
+            
+
+            <label>E - Mail</label>                    
+            <input type="text" class="text-box" placeholder="E - Mail" formControlName="email">
+            <div [innerHTML]="message_1" class="error-msg"></div>
+
+
+            <label>User Name</label>    
+            <div [innerHTML]="message_2" class="error-msg"></div>                
+            <input type="text" class="text-box" placeholder="Username" formControlName="userName">
+           
+
+    
+            <label>Password</label>
+            <div [innerHTML]="message_3" class="error-msg"></div>
+            <input type="password" class="text-box" placeholder="Password" formControlName="password">
+            
+        </div>
+        <div class="button-container">        
+            <button class="sub-btn" type="submit"> Create Account </button>
+        </div>       
+    </form>
+    
+    </div>   

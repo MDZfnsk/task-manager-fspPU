@@ -1,12 +1,6 @@
-<!-- <p> {{selectedList.name}}</p>
 
-<button (click)="onClickDelete()"> Remove Item </button>
-<button> Mark As Completed </button>
- -->
-
- 
 <h1>Delete List </h1>
-<button routerLink="/" class="back-btn"> < Back</button>
+<button (click)="onBackClick()" class="back-btn"> < Back</button>
 
 <div class="center-container">
 	
@@ -17,7 +11,7 @@
 	  
 
 	  <div class="button-container">
-		<button class="button button-1" routerLink="/">  Cancel </button>
+		<button class="button button-1" (click)="onBackClick()">  Cancel </button>
 		<button class="button button-2" (click)="onClickDelete()" > Confirm </button>
 	  </div>
 	
