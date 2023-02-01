@@ -36,34 +36,6 @@ export class ListsComponent implements OnInit {
      
 
     });
-
-
-
-
-
-
-    // //Calling the getLists() function and passing the date as a parameter to the function
-    // this.listService.getLists(this.date.toString()).subscribe(lists => {
-
-    //   //as the response sends and array of objects and we only need to display the list name
-    //   //we make a new array by mapping only the name properties of the recieved object
-    //   // this.lists = lists.map(item => item.name);
-
-
-    //   /**
-    //    * As we need to make these recived lists items to work as Inputs to another component, we directly
-    //    * assign the recieved lists to the this.lists property
-    //    */
-    //   this.lists = lists ;
-    //   if(lists.length === 0){
-    //     this.isLists = false;
-    //   }
-    //   else {
-    //     this.isLists = true;
-    //   }
-      
-    // })
-
  
 
     
@@ -76,12 +48,7 @@ export class ListsComponent implements OnInit {
         this.isLists = true;
       }
       
-    })
-
-
-
-
-    
+    })    
 
    
   }

@@ -17,6 +17,8 @@ export class TasksViewComponent implements OnInit {
     private location: Location,
     private router: Router) {}
 
+    
+
   listId: string = '';
   tasks: Tasks[] = [];
   isTasks: boolean = true;

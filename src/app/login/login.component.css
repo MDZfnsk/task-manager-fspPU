@@ -106,3 +106,8 @@ p {
 a {
     color: turquoise;
 }
+
+.error-msg {
+    color: red;
+    font-size: 20px;
+}

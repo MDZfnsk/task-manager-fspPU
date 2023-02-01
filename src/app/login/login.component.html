@@ -5,10 +5,10 @@
     <form (ngSubmit)="onSubmitForm(form.value)" [formGroup]="form">
 
     <div class="input-container">
-        <div [innerHTML]="message_1"></div>        
+        <div [innerHTML]="message_1" class="error-msg"></div>        
         <input type="text" class="text-box" placeholder="Username" formControlName="userName">
 
-        <div [innerHTML]="message_2"></div> 
+        <div [innerHTML]="message_2" class="error-msg"></div> 
         <input type="password" class="text-box" placeholder="Password" formControlName="password">
     </div>
     <div class="button-container">        

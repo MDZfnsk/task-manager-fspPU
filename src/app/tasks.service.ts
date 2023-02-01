@@ -14,7 +14,6 @@ export class TasksService {
   constructor( private http: HttpClient) { }  
 
 
-
   //get lists from a selected date
   getSelectedTasks(_listId: string): Observable<Tasks[]> {    
 		return this.http.get<Tasks[]>(`/api/tasks/${_listId}`);
@@ -40,9 +39,7 @@ export class TasksService {
   addTask(name: string, _listId : string):Observable<Tasks[]>{
     const newTask = {name,_listId,isCompleted: false};
     return this.http.post<Tasks[]>(`/api/addTask`,{...newTask});
-  }
-
-  
+  } 
 
 
 }
