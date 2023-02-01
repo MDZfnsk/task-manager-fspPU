@@ -8,7 +8,7 @@ export const getSelectedListsByUser = {
     path: '/Ulists/:userId',
     handler: async (req, res) => {
         const userId = req.params.userId;
-        console.log(userId);
+        
 
         const lists = await getAllLists();      
         

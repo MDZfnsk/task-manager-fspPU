@@ -8,8 +8,7 @@ export const userAuthRoute = {
 
         const uName = req.body.uName;
         const psw = req.body.psw;
-        console.log(uName);
-        console.log(psw);
+       
 
         const users = await getAllUsers();
         
@@ -27,7 +26,7 @@ export const userAuthRoute = {
             
             
              })
-             console.log(authUserId);
+             
              if(userExists) {
                 res.send({status: 'Valid',userId: authUserId});      
             } else {

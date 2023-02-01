@@ -16,7 +16,7 @@ export const getNoOfListsRoute = {
         const matchingItems = lists.filter(item => item.setDate.toString().slice(0, 10) === formattedDate && item.userId === userId
     );
 
-    console.log(matchingItems);
+
     res.status(200).json(matchingItems.length.toString());
         
       

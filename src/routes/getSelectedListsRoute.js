@@ -11,16 +11,15 @@ export const getSelectedListsRoute = {
         const date = req.params.date;
         const userId = req.params.userId;
 
-        console.log(date);
-        console.log(userId);
+        
         const formattedDate = date.slice(0, 10);
-        console.log(formattedDate);
+      
 
     const lists = await getAllLists();      
     const matchingItems = lists.filter(item => item.setDate.toString().slice(0, 10) === formattedDate && item.userId === userId
     );
 
-    console.log(matchingItems);
+    
     res.status(200).json(matchingItems);
         
 
